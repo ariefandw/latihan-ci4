@@ -1,3 +1,6 @@
+<?= $this->extend('layouts/app'); ?>
+
+<?= $this->section('content'); ?>
 <form action="<?= $action; ?>" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label>NIP</label>
@@ -13,10 +16,13 @@
     </div>
     <div class="form-group">
         <label>Alamat</label>
-        <textarea class="form-control" name="alamat" placeholder="Alamat"><?= $pegawai->alamat; ?></textarea>
+        <textarea class="form-control" name="alamat" placeholder="Alamat">
+            <?= $pegawai->alamat; ?>
+        </textarea>
     </div>
     <div class="form-group">
         <label></label>
         <button type="submit" class="form-control btn btn-primary">Simpan</button>
     </div>
 </form>
+<?= $this->endSection(); ?>

@@ -45,7 +45,18 @@ class Pegawai extends BaseController
         $this->response->redirect(site_url('pegawai'));
     }
 
-    public function update()
+    public function update($nip)
     {
+        $data = $this->request->getPost();
+        $pegawai_model = new PegawaiModel();
+        $pegawai_model->update($nip, $data);
+        $this->response->redirect(site_url('pegawai'));
+    }
+
+    public function delete($nip)
+    {
+        $pegawai_model = new PegawaiModel();
+        $pegawai_model->delete($nip);
+        $this->response->redirect(site_url('pegawai'));
     }
 }

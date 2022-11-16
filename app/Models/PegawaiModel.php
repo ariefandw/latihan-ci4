@@ -9,6 +9,7 @@ class PegawaiModel extends Model
     protected $table            = 'pegawai';
     protected $primaryKey       = 'nip';
     protected $useAutoIncrement = false;
+    protected $returnType       = 'object';
     protected $allowedFields    = ['nip', 'nama', 'tgl_lahir', 'alamat'];
     protected $useTimestamps    = true;
 }
