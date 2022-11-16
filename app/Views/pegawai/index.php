@@ -2,6 +2,17 @@
 
 <?= $this->section('content'); ?>
 <a href="<?= site_url('pegawai/create'); ?>" class="btn btn-success">Tambah</a>
+<form action="<?= site_url('pegawai'); ?>" method="get" class="mt-2">
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <input name="q" type="text" class="form-control" placeholder="Pencarian">
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="form-control btn btn-success">Cari</button>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>

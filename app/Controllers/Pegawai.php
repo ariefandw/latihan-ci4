@@ -8,8 +8,12 @@ class Pegawai extends BaseController
 {
     public function index()
     {
+        $data = $this->request->getGet();
+        $q = empty($data['q']) ? '' : $data['q'];
         $pegawai_model = new PegawaiModel();
-        $pegawais = $pegawai_model->findAll();
+        $pegawais = $pegawai_model
+            ->where("CONCAT(nip, nama) LIKE '%$q%'")
+            ->findAll();
         $data = [
             'pegawais' => $pegawais,
         ];
